@@ -10,8 +10,8 @@ export default function App() {
   const [selectedPlayer, setSelectedPlayer] = useState<Player | null>(null);
   const { players, isFetching, error } = useFetchPlayers();
 
-  const handleSelect = (player: Player): void => {
-    setSelectedPlayer({ ...player });
+  const handleSelect = (player: Player | null): void => {
+    setSelectedPlayer(player ? { ...player } : player);
   };
 
   return (

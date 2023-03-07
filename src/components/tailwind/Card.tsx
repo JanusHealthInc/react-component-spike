@@ -20,6 +20,7 @@ const Card = ({ player, isFetching, error }: CardProps) => {
   };
 
   if (isFetching || error) return null;
+
   return (
     <div className="mt-2 w-full flex flex-col items-center justify-center border border-r-black bg-neutral-100 rounded">
       <div className="mt-4 mb-2">

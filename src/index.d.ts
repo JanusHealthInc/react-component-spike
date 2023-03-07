@@ -19,5 +19,5 @@ export type TypeaheadProps = {
   options: Player[];
   isFetching: boolean;
   error: any;
-  onSelect: (player: Player) => void;
+  onSelect: (player: Player | null) => void;
 };
