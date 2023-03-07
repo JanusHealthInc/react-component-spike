@@ -1,17 +1,19 @@
 import "./app.css";
-import { Card } from "./tailwind/components/";
+import BootstrapTypeahead from "./components/bootstrap/Typeahead";
+import MUITypeahead from "./components/material-ui/Typeahead";
+import TailwindTypeahead from "./components/tailwind/Typeahead";
 
 export default function App() {
   return (
     <div className="container">
       <div className="implementation-option" id="bootstrap">
-        Bootstrap
+        <BootstrapTypeahead />
       </div>
       <div className="implementation-option" id="material-ui">
-        Material UI
+        <MUITypeahead />
       </div>
       <div className="implementation-option" id="tailwind">
-        <Card />
+        <TailwindTypeahead />
       </div>
     </div>
   );
