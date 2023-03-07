@@ -1,4 +1,6 @@
-const Card = () => {
+import { CardProps } from "../..";
+
+const Card = ({}: CardProps) => {
   return <div>Card</div>;
 };
 
