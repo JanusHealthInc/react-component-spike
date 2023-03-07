@@ -1,4 +1,5 @@
 import "./app.css";
+import { Card } from "./tailwind/components/";
 
 export default function App() {
   return (
@@ -10,7 +11,7 @@ export default function App() {
         Material UI
       </div>
       <div className="implementation-option" id="tailwind">
-        Tailwind
+        <Card />
       </div>
     </div>
   );

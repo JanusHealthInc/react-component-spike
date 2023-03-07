@@ -3,13 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "./src/index.tsx",
   "scripts": {
     "dev": "vite",
     "build:bootstrap": "cd src/bootstrap && yarn build",
     "build:material-ui": "cd src/material-ui && yarn build",
     "build:tailwind": "cd src/tailwind && yarn build",
     "build": "yarn && tsc && vite build",
-    "build-all": "yarn build:bootstrap && yarn build:material-ui && yarn build:tailwind && build",
+    "build-all": "yarn build:bootstrap && yarn build:material-ui && yarn build:tailwind && yarn build",
     "preview": "vite preview"
   },
   "dependencies": {
