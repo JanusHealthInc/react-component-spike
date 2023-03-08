@@ -2,6 +2,7 @@ import "./app.css";
 import { useState } from "react";
 import { BootstrapCard, BootstrapTypeahead } from "./components/bootstrap/";
 import { MUICard, MUITypeahead } from "./components/material-ui/";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { TailwindCard, TailwindTypeahead } from "./components/tailwind/";
 import useFetchPlayers from "./hooks/use-fetch-players";
 import { Player } from ".";
@@ -33,17 +34,33 @@ export default function App() {
         </div>
         <div className="implementation-option" id="material-ui">
           <p className="header">Material UI</p>
-          <MUITypeahead
-            options={players}
-            isFetching={isFetching}
-            error={error}
-            onSelect={handleSelect}
-          />
-          <MUICard
-            player={selectedPlayer}
-            isFetching={isFetching}
-            error={error}
-          />
+          <ThemeProvider
+            theme={createTheme({
+              palette: {
+                primary: {
+                  main: "#556cd6",
+                },
+                secondary: {
+                  main: "#19857b",
+                },
+                error: {
+                  main: "#f87171",
+                },
+              },
+            })}
+          >
+            <MUITypeahead
+              options={players}
+              isFetching={isFetching}
+              error={error}
+              onSelect={handleSelect}
+            />
+            <MUICard
+              player={selectedPlayer}
+              isFetching={isFetching}
+              error={error}
+            />
+          </ThemeProvider>
         </div>
         <div className="implementation-option" id="tailwind">
           <p className="header">Tailwind</p>
