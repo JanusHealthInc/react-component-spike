@@ -1,4 +1,4 @@
-import { CardProps } from "../..";
+import { CardProps } from "..";
 
 const Card = ({}: CardProps) => {
   return <div>Card</div>;

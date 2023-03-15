@@ -1,10 +1,10 @@
-import { CardProps } from "../..";
+import { CardProps } from "..";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { Button, Typography } from "@mui/material";
-import positionConverter from "../../utils/position-converter";
+import positionConverter from "../utils/position-converter";
 import { styled } from "@mui/material/styles";
 
 const ReviewButton = styled(Button)`

@@ -1,6 +1,5 @@
-import { Player, TypeaheadProps } from "../..";
 import { useState, useMemo, useRef } from "react";
-import "../../../styles/tailwind.css";
+import { Player, TypeaheadProps } from "..";
 
 const Typeahead = ({
   options,

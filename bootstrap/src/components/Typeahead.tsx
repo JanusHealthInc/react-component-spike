@@ -1,6 +1,5 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import { useMemo, useRef, useState } from "react";
-import { Player, TypeaheadProps } from "../..";
+import { Player, TypeaheadProps } from "../index.d";
 import { SearchIcon, XIcon } from "@primer/octicons-react";
 
 const Typeahead = ({

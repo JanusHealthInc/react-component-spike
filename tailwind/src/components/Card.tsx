@@ -1,6 +1,5 @@
-import { CardProps } from "../..";
-import "../../../styles/tailwind.css";
-import positionConverter from "../../utils/position-converter";
+import { CardProps } from "..";
+import positionConverter from "../utils/position-converter";
 
 const Card = ({ player, isFetching, error }: CardProps) => {
   const getFontColor = (position: string | undefined): string => {

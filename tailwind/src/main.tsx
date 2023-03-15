@@ -4,6 +4,7 @@ import App from "./app";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "../styles/tailwind.css";
 
 const queryClientOptions = {
   defaultOptions: {
