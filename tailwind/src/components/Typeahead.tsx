@@ -1,5 +1,12 @@
 import { useState, useMemo, useRef } from "react";
-import { Player, TypeaheadProps } from "..";
+import { Player } from "..";
+
+type TypeaheadProps = {
+  options: Player[];
+  isFetching: boolean;
+  error: any;
+  onSelect: (player: Player | null) => void;
+};
 
 const Typeahead = ({
   options,
@@ -44,12 +51,12 @@ const Typeahead = ({
   };
 
   return (
-    <div>
-      <div className="cursor-pointer flex flex-row justify-between items-center rounded border border-black">
+    <>
+      <div className="cursor-pointer flex flex-row justify-between items-center rounded border border-gray-600">
         <div className="flex flex-row justify-start items-center">
           {searchText.length === 0 && <MagnifyingGlassIcon />}
           <input
-            className="cursor-pointer border-transparent pl-1 outline-none"
+            className="cursor-pointer pl-1 outline-none"
             ref={typeaheadInput}
             type="text"
             onChange={handleOnChange}
@@ -59,7 +66,7 @@ const Typeahead = ({
         </div>
         {searchText.length !== 0 && (
           <div
-            className="flex justify-center items-center border-l mr-1"
+            className="flex justify-center items-center border-l border-gray-600 mr-1"
             onClick={handleClearText}
           >
             {/* Had to use an nbsp to make the end adornment height work */}
@@ -86,7 +93,7 @@ const Typeahead = ({
             ))}
           </div>
         )}
-    </div>
+    </>
   );
 };
 

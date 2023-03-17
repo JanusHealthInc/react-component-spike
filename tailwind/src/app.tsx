@@ -8,19 +8,21 @@ export default function App() {
   const { players, isFetching, error } = useFetchPlayers();
 
   const handleSelect = (player: Player | null): void => {
-    setSelectedPlayer(player ? { ...player } : player);
+    setSelectedPlayer(player);
   };
 
   return (
     <div className="flex justify-center items-center flex-col">
       <p>Tailwind</p>
-      <Typeahead
-        options={players}
-        isFetching={isFetching}
-        error={error}
-        onSelect={handleSelect}
-      />
-      <Card player={selectedPlayer} isFetching={isFetching} error={error} />
+      <div>
+        <Typeahead
+          options={players}
+          isFetching={isFetching}
+          error={error}
+          onSelect={handleSelect}
+        />
+        <Card player={selectedPlayer} isFetching={isFetching} error={error} />
+      </div>
     </div>
   );
 }

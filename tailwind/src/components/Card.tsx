@@ -1,5 +1,12 @@
-import { CardProps } from "..";
+import { toast } from "react-toastify";
+import { Player } from "..";
 import positionConverter from "../utils/position-converter";
+
+type CardProps = {
+  player: Player | null;
+  isFetching: boolean;
+  error: any;
+};
 
 const Card = ({ player, isFetching, error }: CardProps) => {
   const getFontColor = (position: string | undefined): string => {
@@ -21,10 +28,10 @@ const Card = ({ player, isFetching, error }: CardProps) => {
   if (isFetching || error) return null;
 
   return (
-    <div className="mt-2 w-full flex flex-col items-center justify-center border border-r-black bg-neutral-100 rounded">
+    <div className="w-100 mt-2 flex flex-col items-center justify-center border border-neutral-100 bg-neutral-100 rounded">
       <div className="mt-4 mb-2">
         <div
-          className={`rounded border border-gray-500 bg-white px-1 text-xs ${getFontColor(
+          className={`rounded border bg-white px-1 text-xs ${getFontColor(
             player?.position
           )}`}
         >
@@ -32,13 +39,22 @@ const Card = ({ player, isFetching, error }: CardProps) => {
         </div>
       </div>
       <div className="my-2">
-        <span className="font-semibold text-lg text-gray-700">
+        <span className="font-semibold text-lg text-gray-600">
           {player?.name}
         </span>
       </div>
       <div className="mt-2 mb-4">
-        <button className="border rounded bg-white border-gray-500 hover:border-black py-2 px-3">
-          <span>Review</span>
+        <button
+          className="border rounded bg-white border-gray-200 hover:border-gray-300 py-2 px-3"
+          onClick={() => {
+            if (player?.id) {
+              toast.success("Automated review successful!");
+            } else {
+              toast.error("No player selected");
+            }
+          }}
+        >
+          <span className="font-semibold text-gray-600">Review</span>
         </button>
       </div>
     </div>
