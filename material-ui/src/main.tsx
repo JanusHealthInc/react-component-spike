@@ -30,6 +30,11 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
               main: "#f87171",
             },
           },
+          typography: {
+            button: {
+              textTransform: "none",
+            },
+          },
         })}
       >
         <ToastContainer

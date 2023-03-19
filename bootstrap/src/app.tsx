@@ -13,15 +13,17 @@ export default function App() {
   };
 
   return (
-    <div>
+    <div className="d-flex justify-content-center align-items-center flex-column">
       <p>Bootstrap</p>
-      <Typeahead
-        options={players}
-        isFetching={isFetching}
-        error={error}
-        onSelect={handleSelect}
-      />
-      <Card player={selectedPlayer} isFetching={isFetching} error={error} />
+      <div>
+        <Typeahead
+          options={players}
+          isFetching={isFetching}
+          error={error}
+          onSelect={handleSelect}
+        />
+        <Card player={selectedPlayer} isFetching={isFetching} error={error} />
+      </div>
     </div>
   );
 }

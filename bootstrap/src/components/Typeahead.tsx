@@ -1,5 +1,6 @@
 import { useMemo, useRef, useState } from "react";
 import { Player, TypeaheadProps } from "../index.d";
+import "./Typeahead.css";
 import { SearchIcon, XIcon } from "@primer/octicons-react";
 
 const Typeahead = ({
@@ -45,37 +46,49 @@ const Typeahead = ({
   };
 
   return (
-    <div>
-      <div>
-        <div>Search</div>
+    <>
+      <div className="d-flex flex-row justify-content-between align-items-center rounded border border-secondary">
+        {searchText.length === 0 && (
+          <div className="border-secondary">
+            <SearchIcon size={16} />
+          </div>
+        )}
         <input
+          className="pl-1 outline-none border-none"
           ref={typeaheadInput}
           type="text"
           onChange={handleOnChange}
           disabled={isFetching || error}
           placeholder={"Search for..."}
         />
-        <div onClick={handleClearText}>Clear</div>
+        {searchText.length !== 0 && (
+          <div
+            className="border-start border-secondary"
+            onClick={handleClearText}
+          >
+            <XIcon size={16} />
+          </div>
+        )}
       </div>
       {searchText.length !== 0 &&
         !isFetching &&
         !error &&
         document.activeElement === typeaheadInput.current && (
-          <>
+          <div className="d-flex flex-column rounded overflow-y-auto border border-secondary bg-white">
             {filteredOptions.map((option: Player) => (
               <p
                 onClick={() => {
                   handleSelectPlayer(option);
                 }}
                 key={option.id}
-                className=""
+                className="on-hover rounded"
               >
                 {option.name}
               </p>
             ))}
-          </>
+          </div>
         )}
-    </div>
+    </>
   );
 };
 

@@ -1,11 +1,20 @@
-import { CardProps } from "..";
-import SearchIcon from "@mui/icons-material/Search";
-import CloseIcon from "@mui/icons-material/Close";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { Button, Typography } from "@mui/material";
 import positionConverter from "../utils/position-converter";
 import { styled } from "@mui/material/styles";
+import { Player } from "..";
+
+export type CardProps = {
+  player: Player | null;
+  isFetching: boolean;
+  error: any;
+};
+
+const PositionText = styled(Typography)`
+  border-width: 1px;
+  border-color: black;
+`;
 
 const ReviewButton = styled(Button)`
   color: black;
@@ -33,16 +42,31 @@ const _Card = ({ player, isFetching, error }: CardProps) => {
   return (
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
-        <Typography
+        <PositionText
           sx={{ fontSize: 14 }}
-          color={"red"}
-          // color={getFontColor(player?.position)}
+          color={getFontColor(player?.position)}
         >
           {positionConverter(player?.position).toUpperCase()}
+        </PositionText>
+        <Typography
+          sx={{
+            fontWeight: 600,
+            color: "darkslategrey",
+            fontSize: "1.125rem",
+            lineHeight: "1.175rem",
+          }}
+        >
+          {player?.name}
         </Typography>
-        <Typography>{player?.name}</Typography>
-        <ReviewButton variant="outlined" disabled={isFetching}>
-          <Typography>Review</Typography>
+        <ReviewButton
+          variant="outlined"
+          disabled={isFetching || error || !player}
+        >
+          <Typography
+            sx={{ fontWeight: 600, color: "darkslategrey", padding: "" }}
+          >
+            Review
+          </Typography>
         </ReviewButton>
       </CardContent>
     </Card>

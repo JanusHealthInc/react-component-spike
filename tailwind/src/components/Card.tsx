@@ -25,18 +25,18 @@ const Card = ({ player, isFetching, error }: CardProps) => {
     }
   };
 
-  if (isFetching || error) return null;
-
   return (
     <div className="w-100 mt-2 flex flex-col items-center justify-center border border-neutral-100 bg-neutral-100 rounded">
       <div className="mt-4 mb-2">
-        <div
-          className={`rounded border bg-white px-1 text-xs ${getFontColor(
-            player?.position
-          )}`}
-        >
-          {positionConverter(player?.position).toUpperCase()}
-        </div>
+        {player && (
+          <div
+            className={`rounded border bg-white px-1 text-xs ${getFontColor(
+              player?.position
+            )}`}
+          >
+            {positionConverter(player?.position).toUpperCase()}
+          </div>
+        )}
       </div>
       <div className="my-2">
         <span className="font-semibold text-lg text-gray-600">
@@ -45,14 +45,13 @@ const Card = ({ player, isFetching, error }: CardProps) => {
       </div>
       <div className="mt-2 mb-4">
         <button
-          className="border rounded bg-white border-gray-200 hover:border-gray-300 py-2 px-3"
+          className="border rounded bg-white border-gray-200 hover:border-gray-300 py-2 px-3 disabled:bg-gray-200"
           onClick={() => {
-            if (player?.id) {
-              toast.success("Automated review successful!");
-            } else {
-              toast.error("No player selected");
-            }
+            player?.id
+              ? toast.success("Automated review successful!")
+              : toast.error("No player selected");
           }}
+          disabled={isFetching || error || !player}
         >
           <span className="font-semibold text-gray-600">Review</span>
         </button>

@@ -1,0 +1,11 @@
+.outline-none {
+  outline: none;
+}
+
+.border-none {
+  border: none;
+}
+
+.on-hover:hover {
+  background-color: rgb(243 244 246);
+}

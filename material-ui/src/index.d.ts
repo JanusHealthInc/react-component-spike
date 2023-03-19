@@ -8,16 +8,3 @@ export type Player = {
   height: number;
   weight: number;
 };
-
-export type CardProps = {
-  player: Player | null;
-  isFetching: boolean;
-  error: any;
-};
-
-export type TypeaheadProps = {
-  options: Player[];
-  isFetching: boolean;
-  error: any;
-  onSelect: (player: Player | null) => void;
-};

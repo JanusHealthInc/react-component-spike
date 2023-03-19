@@ -66,7 +66,7 @@ const Typeahead = ({
         </div>
         {searchText.length !== 0 && (
           <div
-            className="flex justify-center items-center border-l border-gray-600 mr-1"
+            className="flex justify-center items-center border-l border-gray-700 mr-1"
             onClick={handleClearText}
           >
             {/* Had to use an nbsp to make the end adornment height work */}
