@@ -14,7 +14,7 @@ export default function App() {
   };
 
   return (
-    <CenteredDiv column>
+    <CenteredDiv>
       <p>Material UI</p>
       <div>
         <Typeahead

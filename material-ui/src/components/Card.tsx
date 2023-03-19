@@ -11,12 +11,35 @@ export type CardProps = {
   error: any;
 };
 
+const CenteredCard = styled(Card)`
+  display: flex;
+  justify-content: center;
+`;
+
 const PositionText = styled(Typography)`
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
   border-width: 1px;
   border-color: black;
+  border-radius: 0.25rem;
+`;
+
+const NameText = styled(Typography)`
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+`;
+
+const CenteredCardContent = styled(CardContent)`
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;
 
 const ReviewButton = styled(Button)`
+  margin-top: 0.5rem;
+  margin-bottom 1rem;
   color: black;
 `;
 
@@ -40,36 +63,52 @@ const _Card = ({ player, isFetching, error }: CardProps) => {
   if (isFetching || error) return null;
 
   return (
-    <Card sx={{ minWidth: 275 }}>
-      <CardContent>
+    <CenteredCard
+      variant="outlined"
+      sx={{ minWidth: 275, backgroundColor: "#F5F5F5" }}
+    >
+      <CenteredCardContent>
         <PositionText
-          sx={{ fontSize: 14 }}
+          sx={{
+            fontSize: "0.75rem",
+            borderColor: "#e5e7eb",
+            borderWidth: "1px",
+            backgroundColor: "white",
+            borderRadius: "rounded",
+            padding: "1px",
+          }}
+          borderRadius="rounded"
           color={getFontColor(player?.position)}
         >
           {positionConverter(player?.position).toUpperCase()}
         </PositionText>
-        <Typography
+        <NameText
           sx={{
             fontWeight: 600,
-            color: "darkslategrey",
+            color: "#4B5563",
             fontSize: "1.125rem",
             lineHeight: "1.175rem",
           }}
         >
           {player?.name}
-        </Typography>
+        </NameText>
         <ReviewButton
           variant="outlined"
           disabled={isFetching || error || !player}
+          sx={{ borderColor: "lightgray", backgroundColor: "white" }}
         >
           <Typography
-            sx={{ fontWeight: 600, color: "darkslategrey", padding: "" }}
+            sx={{
+              fontWeight: 600,
+              color: "#4B5563",
+              padding: "1px",
+            }}
           >
             Review
           </Typography>
         </ReviewButton>
-      </CardContent>
-    </Card>
+      </CenteredCardContent>
+    </CenteredCard>
   );
 };
 

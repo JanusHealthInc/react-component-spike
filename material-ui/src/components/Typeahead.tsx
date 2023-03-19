@@ -33,7 +33,6 @@ const Typeahead = ({
   }, [searchText, options]);
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log("event", event.target.value);
     setSearchText(event.target.value);
   };
 
@@ -62,7 +61,7 @@ const Typeahead = ({
             {...params}
             InputProps={{
               ...params.InputProps,
-              startAdornment: (
+              startAdornment: !searchText && (
                 <InputAdornment position="start">
                   <SearchIcon size="small" />
                 </InputAdornment>
