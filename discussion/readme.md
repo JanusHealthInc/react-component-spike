@@ -61,7 +61,9 @@ Pros:
 - Famililar class names
 
 ```js
-// Bootstrap 'd-flex justify-content-center align-items-center'
+<div className="d-flex justify-content-center align-items-center">
+  Styled div
+</div>
 ```
 
 Cons:
@@ -75,7 +77,7 @@ Pros:
 - Famililar class names
 
 ```js
-// Tailwind 'flex justify-center items-center'
+<div className="flex justify-center items-center">Styled div</div>
 ```
 
 - Unopinionated
@@ -91,22 +93,21 @@ Cons:
 
 Pros:
 
-- Theme providers can be used to
+- Theme providers can be used to standardize styling and expidite development
 - Elegant styled API for created styled components
 
 ```js
-import * as React from "react";
+import React from "react";
 import { styled } from "@mui/system";
 
-const MyComponent = styled("div")({
-  color: "darkslategray",
-  backgroundColor: "aliceblue",
-  padding: 8,
-  borderRadius: 4,
-});
+const StyledDiv = styled.div`
+  display: "flex";
+  justify-content: "center";
+  align-items: "center";
+`;
 
-export default function BasicUsage() {
-  return <MyComponent>Styled div</MyComponent>;
+export default function StyledDivExample() {
+  return <StyledDiv>Styled div</StyledDiv>;
 }
 ```
 
@@ -114,13 +115,14 @@ Cons:
 
 - Huge bundle size
 - If we don't commit to the Material UI design pattern we will be fighting it every step of the way
+- Duplicate styled components can get out of hand
 
 ### Final Thoughts
 
 The question is essentially, what level of customizability to do we want? The levels are pretty clear to me:
 
-1. Full customizability without an opinionated start (Tailwind)
-2. Customizability with an opinionated start (Bootstrap)
-3. Commit to someone else's design patterns (Material UI)
+- Full customizability without an opinionated start (Tailwind)
+- Customizability with an opinionated start (Bootstrap)
+- Commit to someone else's design patterns (Material UI)
 
 I don't think any of these are bad options. We don't need to be creating a completely unique website without the design patterns and opinions of someone else. But if that is what we are trying to do, Tailwind of Bootstrap would be the choices.
