@@ -6,31 +6,37 @@ A frontend library for building UI components
 
 - Significantly larger pool of applicants
 - Frontent state (many options... react-query, React Contexts, Redux, Jotai, Zustand, etc.)
+- Non blocking UI code ([React Skeleton Example](https://index.simulationhockey.com/shl/leaders?tab=Skaters))
+  - This has more to do with our implementation of RxJS than React vs Angular, but I think it shows a prime example of why we should move away from RxJS
 - More community support, the field seems to have "chosen" React at this point in time
 
-### React
+### GitHub Metrics
 
-![React Github](./images/react-github.png)
+#### React
 
-### Angular
+[![React Github](./images/react-github.png)](https://github.com/facebook/react)
 
-![Angular Github](./images/angular-github.png)
+#### Angular
 
-### Legend
+[![Angular Github](./images/angular-github.png)](https://github.com/angular)
 
-![State of JS Legend](./images/sojs-legend.png)
+### State of JS Metrics (2022)
 
-### Retention
+#### Legend
 
-![State of JS Retention](./images/sojs-retention.png)
+[![State of JS Legend](./images/sojs-legend.png)](https://2022.stateofjs.com/en-US/libraries/front-end-frameworks/)
 
-### Interest
+#### Retention
 
-![State of JS Interest](./images/sojs-interest.png)
+[![State of JS Retention](./images/sojs-retention.png)](https://2022.stateofjs.com/en-US/libraries/front-end-frameworks/)
 
-### Usage
+#### Interest
 
-![State of JS Usage](./images/sojs-usage.png)
+[![State of JS Interest](./images/sojs-interest.png)](https://2022.stateofjs.com/en-US/libraries/front-end-frameworks/)
+
+#### Usage
+
+[![State of JS Usage](./images/sojs-usage.png)](https://2022.stateofjs.com/en-US/libraries/front-end-frameworks/)
 
 ## Why Vite?
 
@@ -50,7 +56,7 @@ A build tool for making javascript applications
 - Bundles for production using rollup (no native ES modules for prod)
 - Supports SSR with client side hydration
 
-https://vitejs.dev/guide/features.html
+[Vite Features](https://vitejs.dev/guide/features.html)
 
 ## Bootstrap vs Material UI vs Tailwind
 
@@ -66,28 +72,31 @@ Pros:
 </div>
 ```
 
+[Bootstrap Flexbox](https://getbootstrap.com/docs/4.0/utilities/flex/)
+
 Cons:
 
 - Comes with a set of predefined styles we'll have to selectively change as needed
+- Long strings of class names
 
 ### Tailwind
 
 Pros:
 
+- Unopinionated
+- Extremely fast to work with
 - Famililar class names
 
 ```js
 <div className="flex justify-center items-center">Styled div</div>
 ```
 
-- Unopinionated
-- Extremely fast to work with
+[Tailwind Flexbox](https://tailwindcss.com/docs/flex)
 
 Cons:
 
 - Everything from scratch
 - Long strings of class names
--
 
 ### Material UI
 
@@ -110,6 +119,8 @@ export default function StyledDivExample() {
   return <StyledDiv>Styled div</StyledDiv>;
 }
 ```
+
+[MUI Styled](https://mui.com/system/styled/)
 
 Cons:
 
