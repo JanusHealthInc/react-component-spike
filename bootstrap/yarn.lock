@@ -489,13 +489,6 @@
   resolved "https://registry.yarnpkg.com/@primer/octicons-react/-/octicons-react-18.2.0.tgz#eeac37b3d42980a7edebd790b9373d22bdb89f72"
   integrity sha512-taT0l99qztqU9NnNo0HCutm3mEjBmXcaqWlmCLvU2MrKVrMZF3HuwaguPhNl/rNk8+mpgtDSTTDPBlpI0MtPPA==
 
-"@primer/octicons@^18.2.0":
-  version "18.2.0"
-  resolved "https://registry.yarnpkg.com/@primer/octicons/-/octicons-18.2.0.tgz#14efe3304536f8e3ef0c5202f9f2fece81708781"
-  integrity sha512-Bx7PkGZUgbo/xbZSdufxKefg5JzvGPkIu/x93TAiWit+FoPBmLammqfHQe1Y5gmT2AWAuxJUksYN05hi7w6VnA==
-  dependencies:
-    object-assign "^4.1.1"
-
 "@react-aria/ssr@^3.4.1":
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/@react-aria/ssr/-/ssr-3.5.0.tgz#40c1270a75868185f72a88cafe37bd1392f690cb"
@@ -1254,9 +1247,9 @@ scheduler@^0.23.0:
     loose-envify "^1.1.0"
 
 semver@^6.3.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-6.3.0.tgz#ee0a64c8af5e8ceea67687b133761e1becbd1d3d"
-  integrity sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-6.3.1.tgz#556d2ef8689146e46dcea4bfdd095f3434dffcb4"
+  integrity sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==
 
 source-map-js@^1.0.2:
   version "1.0.2"
